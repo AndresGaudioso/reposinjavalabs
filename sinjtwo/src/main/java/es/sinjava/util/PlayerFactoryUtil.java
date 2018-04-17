@@ -1,4 +1,4 @@
-package es.sinjava.factory;
+package es.sinjava.util;
 
 import java.util.ArrayList;
 import java.util.Date;
@@ -13,7 +13,8 @@ public class PlayerFactoryUtil {
 		List<Player> listPlayers = new ArrayList<>(0);
 		for (int index = 0; index < 15; index++) {
 			PlayerType playerType = (PlayerType.values())[index % 5];
-			listPlayers.add(new Player(playerType, "Andrés" + index, "MyBand", new Date(), index));
+			String name = (NamesUtil.values())[index % 8].name();
+			listPlayers.add(new Player(playerType, name, "MyBand", new Date(), index));
 		}
 		return listPlayers;
 	}
