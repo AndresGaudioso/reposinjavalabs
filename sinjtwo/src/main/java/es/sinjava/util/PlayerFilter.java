@@ -5,6 +5,7 @@ import java.util.Arrays;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
+import java.util.function.BiPredicate;
 import java.util.function.Predicate;
 
 import es.sinjava.model.Player;
@@ -35,11 +36,28 @@ public class PlayerFilter {
 		return PlayerType.VOZ.equals(player.getPlayerType());
 	}
 
+	public static boolean filterByType(Player player, Set<PlayerType> playerTypesSet) {
+		return playerTypesSet.contains(player.getPlayerType());
+	}
+
 	// nueva sintaxis de java 8 pasamos un parámetro de tipo predicado
 	public static List<Player> filterPlayers(List<Player> players, Predicate<Player> p) {
 		List<Player> playersList = new ArrayList<>();
 		for (Player player : players) {
 			if (p.test(player)) {
+				playersList.add(player);
+			}
+		}
+		return playersList;
+	}
+
+	public static List<Player> filterPlayersByType(List<Player> players, BiPredicate<Player, Set<PlayerType>> predicate,
+			PlayerType... playertypes) {
+
+		Set<PlayerType> playerTypesSet = new HashSet<>(Arrays.asList(playertypes));
+		List<Player> playersList = new ArrayList<>();
+		for (Player player : players) {
+			if (predicate.test(player, playerTypesSet)) {
 				playersList.add(player);
 			}
 		}
