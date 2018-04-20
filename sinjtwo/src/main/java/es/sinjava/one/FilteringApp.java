@@ -37,24 +37,26 @@ public class FilteringApp {
 
 		System.out.println("\n Java 8 way ");
 		List<Player> nuevaColeccion = PlayerFactoryUtil.getPlayers();
-		List<Player> listPlayersFilteredNewWay =  PlayerFilter.filterPlayers(nuevaColeccion, PlayerFilter::isVoz);
-		
+		List<Player> listPlayersFilteredNewWay = PlayerFilter.filterPlayers(nuevaColeccion, PlayerFilter::isVoz);
+
 		for (Player player : listPlayersFilteredNewWay) {
-			System.out.print("8 way "+ player.getName() + " - " + player.getPlayerType().name().toLowerCase() + " | ");
+			System.out.print("8 way " + player.getName() + " - " + player.getPlayerType().name().toLowerCase() + " | ");
 		}
-		
+
 		// multipredicado
-		
+
 		List<Player> nuevaColeccionMultipredicado = PlayerFactoryUtil.getPlayers();
-		
+
 		System.out.println("\n Java 8 way multi ");
 
-		List<Player> listPlayersFilteredMultipredicado =  PlayerFilter.filterPlayersByType(nuevaColeccionMultipredicado, PlayerFilter::filterByType, PlayerType.ACUSTICA, PlayerType.BATERIA );
-		
+		List<Player> listPlayersFilteredMultipredicado = PlayerFilter.filterPlayersByType(nuevaColeccionMultipredicado,
+				PlayerFilter::filterByType, PlayerType.ACUSTICA, PlayerType.BATERIA);
+
 		for (Player player : listPlayersFilteredMultipredicado) {
-			System.out.println("8 way multi "+ player.getName() + " - " + player.getPlayerType().name().toLowerCase() + " | ");
+			System.out.println(
+					"8 way multi " + player.getName() + " - " + player.getPlayerType().name().toLowerCase() + " | ");
 		}
-		
+
 	}
 
 }
