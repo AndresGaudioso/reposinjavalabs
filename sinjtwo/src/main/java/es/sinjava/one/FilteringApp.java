@@ -1,6 +1,5 @@
 package es.sinjava.one;
 
-import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
@@ -33,11 +32,18 @@ public class FilteringApp {
 				PlayerType.ACUSTICA, PlayerType.BATERIA);
 
 		for (Player player : listPlayersFilteredTwo) {
-			System.out.print( player.getName() + " - " + player.getPlayerType().name().toLowerCase() + " | ");
-
+			System.out.print(player.getName() + " - " + player.getPlayerType().name().toLowerCase() + " | ");
 		}
-		System.out.println();
 
+		System.out.println("\n Java 8 way ");
+		List<Player> nuevaColeccion = PlayerFactoryUtil.getPlayers();
+		List<Player> listPlayersFilteredNewWay =  PlayerFilter.filterPlayers(nuevaColeccion, PlayerFilter::isVoz);
+		
+		for (Player player : listPlayersFilteredNewWay) {
+			System.out.print("8 way "+ player.getName() + " - " + player.getPlayerType().name().toLowerCase() + " | ");
+		}
+		
+		
 	}
 
 }
