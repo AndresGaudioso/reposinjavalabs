@@ -11,9 +11,9 @@ public class PlayerFactoryUtil {
 
 	public static List<Player> getPlayers() {
 		List<Player> listPlayers = new ArrayList<>(0);
-		for (int index = 0; index < 15; index++) {
+		for (int index = 0; index < 30; index++) {
 			PlayerType playerType = (PlayerType.values())[index % 5];
-			String name = (NamesUtil.values())[index % 8].name();
+			String name = (NamesUtil.values())[index % 13].name();
 			listPlayers.add(new Player(playerType, name, "MyBand", new Date(), index));
 		}
 		return listPlayers;
