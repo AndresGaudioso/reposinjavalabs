@@ -19,7 +19,7 @@ public class CifrandoArchivos {
 
 		String today = DateFormat.getDateInstance().format(new Date());
 
-		String textIn = " Prueba de concepto de cifrado superguay";
+		String textIn = " Prueba de concepto de cifrado elegante";
 
 		// Se encripta
 

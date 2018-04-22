@@ -1,7 +1,9 @@
 package es.sinjava.cifrando;
 
-import java.io.FileOutputStream;
+import java.io.File;
 import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.StandardOpenOption;
 import java.security.Key;
 import java.security.KeyPair;
 import java.security.KeyPairGenerator;
@@ -33,9 +35,7 @@ public class KeyPairFactory {
 
 	private static void saveKey(Key key, String fileName) throws IOException {
 		byte[] publicKeyBytes = key.getEncoded();
-		FileOutputStream fos = new FileOutputStream(fileName);
-		fos.write(publicKeyBytes);
-		fos.close();
+		Files.write(new File(fileName).toPath(), publicKeyBytes, StandardOpenOption.CREATE);
 	}
 
 }
