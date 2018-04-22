@@ -1,7 +1,8 @@
 package es.sinjava.cifrando;
 
-import java.io.FileInputStream;
+import java.io.File;
 import java.io.IOException;
+import java.nio.file.Files;
 import java.security.GeneralSecurityException;
 import java.security.KeyFactory;
 import java.security.PrivateKey;
@@ -47,27 +48,17 @@ public class CifradorDescifrador {
 	}
 
 	private static PublicKey loadPublicKey(String fileName) throws IOException, GeneralSecurityException {
-		FileInputStream fis = new FileInputStream(fileName);
-		int numBtyes = fis.available();
-		byte[] bytes = new byte[numBtyes];
-		fis.read(bytes);
-		fis.close();
-
+		byte[] content = Files.readAllBytes(new File(fileName).toPath());
 		KeyFactory keyFactory = KeyFactory.getInstance("RSA");
-		KeySpec keySpec = new X509EncodedKeySpec(bytes);
+		KeySpec keySpec = new X509EncodedKeySpec(content);
 		PublicKey keyFromBytes = keyFactory.generatePublic(keySpec);
 		return keyFromBytes;
 	}
 
 	private static PrivateKey loadPrivateKey(String fileName) throws IOException, GeneralSecurityException {
-		FileInputStream fis = new FileInputStream(fileName);
-		int numBtyes = fis.available();
-		byte[] bytes = new byte[numBtyes];
-		fis.read(bytes);
-		fis.close();
-
+		byte[] content = Files.readAllBytes(new File(fileName).toPath());
 		KeyFactory keyFactory = KeyFactory.getInstance("RSA");
-		KeySpec keySpec = new PKCS8EncodedKeySpec(bytes);
+		KeySpec keySpec = new PKCS8EncodedKeySpec(content);
 		PrivateKey keyFromBytes = keyFactory.generatePrivate(keySpec);
 		return keyFromBytes;
 	}
