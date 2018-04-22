@@ -26,10 +26,6 @@ public class CifradorDescifrador {
 		return new CifradorDescifrador();
 	}
 
-	static {
-
-	}
-
 	public byte[] encript(String publicKeyFile, byte[] textAsByte) throws IOException, GeneralSecurityException {
 
 		PublicKey publicKey = loadPublicKey(publicKeyFile);
