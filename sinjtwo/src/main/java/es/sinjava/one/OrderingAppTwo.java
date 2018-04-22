@@ -54,8 +54,8 @@ public class OrderingAppTwo extends OrderingApp {
 		List<Player> nuevaColeccionLambda3 = getPlayers();
 
 		nuevaColeccionLambda3.sort((Player o1, Player o2) -> {
-			int compareValue = o2.getName().compareTo(o1.getName());
-			compareValue = (compareValue == 0) ? o2.getPlayerType().compareTo(o1.getPlayerType()) : compareValue;
+			int compareValue = o1.getName().compareTo(o2.getName());
+			compareValue = (compareValue == 0) ? o1.getPlayerType().compareTo(o2.getPlayerType()) : compareValue;
 			return compareValue;
 		});
 

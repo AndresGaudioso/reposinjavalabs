@@ -7,6 +7,8 @@ import java.util.List;
 import java.util.Set;
 import java.util.function.BiPredicate;
 import java.util.function.Predicate;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 import es.sinjava.model.Player;
 import es.sinjava.model.PlayerType;
@@ -54,7 +56,10 @@ public class PlayerFilter {
 	public static List<Player> filterPlayersByType(List<Player> players, BiPredicate<Player, Set<PlayerType>> predicate,
 			PlayerType... playertypes) {
 
-		Set<PlayerType> playerTypesSet = new HashSet<>(Arrays.asList(playertypes));
+		// Set<PlayerType> playerTypesSet = new HashSet<>(Arrays.asList(playertypes));
+		// Java 8 way
+		Set<PlayerType> playerTypesSet = Stream.of(playertypes).collect(Collectors.toSet());
+
 		List<Player> playersList = new ArrayList<>();
 		for (Player player : players) {
 			if (predicate.test(player, playerTypesSet)) {
