@@ -4,20 +4,16 @@ import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.nio.file.Files;
-import java.text.DateFormat;
 import java.util.Arrays;
 import java.util.Base64;
 import java.util.Base64.Decoder;
 import java.util.Base64.Encoder;
-import java.util.Date;
 import java.util.List;
 import java.util.stream.Stream;
 
 public class CifrandoArchivos {
 
 	public static void main(String[] args) throws Exception {
-
-		String today = DateFormat.getDateInstance().format(new Date());
 
 		String textIn = " Prueba de concepto de cifrado elegante";
 
