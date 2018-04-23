@@ -16,12 +16,14 @@ import javax.crypto.Cipher;
 public class CifradorDescifrador {
 
 	private static Cipher cipherRsa;
+	private static KeyFactory keyFactory;
 
 	public static CifradorDescifrador getInstanceRsa() {
 		try {
 			cipherRsa = Cipher.getInstance("RSA/ECB/PKCS1Padding");
+			keyFactory = KeyFactory.getInstance("RSA");
 		} catch (GeneralSecurityException e) {
-			// ESto no debería ocurrir
+			System.out.println("Error: ");
 		}
 		return new CifradorDescifrador();
 	}
@@ -45,7 +47,6 @@ public class CifradorDescifrador {
 
 	private static PublicKey loadPublicKey(String fileName) throws IOException, GeneralSecurityException {
 		byte[] content = Files.readAllBytes(new File(fileName).toPath());
-		KeyFactory keyFactory = KeyFactory.getInstance("RSA");
 		KeySpec keySpec = new X509EncodedKeySpec(content);
 		PublicKey keyFromBytes = keyFactory.generatePublic(keySpec);
 		return keyFromBytes;
@@ -53,7 +54,6 @@ public class CifradorDescifrador {
 
 	private static PrivateKey loadPrivateKey(String fileName) throws IOException, GeneralSecurityException {
 		byte[] content = Files.readAllBytes(new File(fileName).toPath());
-		KeyFactory keyFactory = KeyFactory.getInstance("RSA");
 		KeySpec keySpec = new PKCS8EncodedKeySpec(content);
 		PrivateKey keyFromBytes = keyFactory.generatePrivate(keySpec);
 		return keyFromBytes;
