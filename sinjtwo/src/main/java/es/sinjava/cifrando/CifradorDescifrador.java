@@ -23,7 +23,7 @@ public class CifradorDescifrador {
 			cipherRsa = Cipher.getInstance("RSA/ECB/PKCS1Padding");
 			keyFactory = KeyFactory.getInstance("RSA");
 		} catch (GeneralSecurityException e) {
-			System.out.println("Error: ");
+			System.out.println("Error: " + e);
 		}
 		return new CifradorDescifrador();
 	}
