@@ -3,7 +3,6 @@ package es.sinjava.one;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashSet;
-import java.util.Iterator;
 import java.util.List;
 import java.util.Set;
 
@@ -19,8 +18,7 @@ public class FilteringAppV2 {
 
 		List<Player> filtered = new ArrayList<>();
 		Set<PlayerType> validos = new HashSet<>(Arrays.asList(PlayerType.ACUSTICA, PlayerType.BATERIA));
-		for (Iterator<Player> iterator = PlayerFactoryUtil.getPlayers().iterator(); iterator.hasNext();) {
-			Player currentPlayer = iterator.next();
+		for (Player currentPlayer : PlayerFactoryUtil.getPlayers()) {
 			boolean success = (validos.contains(currentPlayer.getPlayerType())) && filtered.add(currentPlayer);
 		}
 		toConsole(filtered);
