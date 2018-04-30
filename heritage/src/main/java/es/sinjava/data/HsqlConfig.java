@@ -28,8 +28,7 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
  *
  */
 @Configuration
-@EnableJpaRepositories(entityManagerFactoryRef = "entityManagerFactory", transactionManagerRef = "transactionManagerHsql", basePackages = {
-		"es.sinjava.data.repository.model" })
+@EnableJpaRepositories(basePackages = { "es.sinjava.data.model.repository" })
 @EnableTransactionManagement
 public class HsqlConfig {
 
@@ -51,7 +50,7 @@ public class HsqlConfig {
 		LOG.trace("Init");
 		HibernateJpaVendorAdapter vendorAdapter = new HibernateJpaVendorAdapter();
 		vendorAdapter.setGenerateDdl(true);
-		vendorAdapter.setDatabase(Database.H2);
+		vendorAdapter.setDatabase(Database.HSQL);
 		// Si está en debug muestra el SQL
 		vendorAdapter.setShowSql(LOG.isDebugEnabled());
 		LocalContainerEntityManagerFactoryBean factory = new LocalContainerEntityManagerFactoryBean();
@@ -68,7 +67,7 @@ public class HsqlConfig {
 		return factory.getObject();
 	}
 
-	@Bean(name = "transactionManagerHsql")
+	@Bean(name = "transactionManager")
 	public PlatformTransactionManager transactionManager() throws SQLException {
 		LOG.trace("Init");
 		return new JpaTransactionManager(entityManagerFactory());

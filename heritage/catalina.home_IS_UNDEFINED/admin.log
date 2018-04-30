@@ -2668,3 +2668,55 @@ Caused by: java.lang.IllegalArgumentException: Illegal attempt to dereference pa
 2018-04-30 18:58:01 - Init
 2018-04-30 18:58:01 - Creating embedded database 'testdb'
 2018-04-30 18:58:02 - Building JPA container EntityManagerFactory for persistence unit 'Modelo'
+2018-04-30 19:16:50 - Root WebApplicationContext: initialization started
+2018-04-30 19:16:51 - Refreshing Root WebApplicationContext: startup date [Mon Apr 30 19:16:51 CEST 2018]; root of context hierarchy
+2018-04-30 19:16:51 - Loading XML bean definitions from ServletContext resource [/WEB-INF/beans.xml]
+2018-04-30 19:16:52 - Loading XML bean definitions from class path resource [META-INF/cxf/cxf.xml]
+2018-04-30 19:16:52 - JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2018-04-30 19:16:53 - Init
+2018-04-30 19:16:53 - Creating embedded database 'testdb'
+2018-04-30 19:16:53 - Building JPA container EntityManagerFactory for persistence unit 'Modelo'
+2018-04-30 19:16:57 - Init
+2018-04-30 19:16:57 - Init
+2018-04-30 19:16:57 - Root WebApplicationContext: initialization completed in 6883 ms
+2018-04-30 19:19:40 - Root WebApplicationContext: initialization started
+2018-04-30 19:19:40 - Refreshing Root WebApplicationContext: startup date [Mon Apr 30 19:19:40 CEST 2018]; root of context hierarchy
+2018-04-30 19:19:40 - Loading XML bean definitions from ServletContext resource [/WEB-INF/beans.xml]
+2018-04-30 19:19:41 - Loading XML bean definitions from class path resource [META-INF/cxf/cxf.xml]
+2018-04-30 19:19:42 - JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2018-04-30 19:19:42 - Init
+2018-04-30 19:19:42 - Creating embedded database 'testdb'
+2018-04-30 19:19:43 - Building JPA container EntityManagerFactory for persistence unit 'Modelo'
+2018-04-30 19:19:46 - Init
+2018-04-30 19:19:46 - Init
+2018-04-30 19:19:46 - Root WebApplicationContext: initialization completed in 6260 ms
+2018-04-30 19:19:53 - Init
+2018-04-30 19:21:43 - Root WebApplicationContext: initialization started
+2018-04-30 19:21:43 - Refreshing Root WebApplicationContext: startup date [Mon Apr 30 19:21:43 CEST 2018]; root of context hierarchy
+2018-04-30 19:21:43 - Loading XML bean definitions from ServletContext resource [/WEB-INF/beans.xml]
+2018-04-30 19:21:44 - Loading XML bean definitions from class path resource [META-INF/cxf/cxf.xml]
+2018-04-30 19:21:45 - JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2018-04-30 19:21:45 - Init
+2018-04-30 19:21:45 - Creating embedded database 'testdb'
+2018-04-30 19:21:46 - Building JPA container EntityManagerFactory for persistence unit 'Modelo'
+2018-04-30 19:21:49 - Init
+2018-04-30 19:21:49 - Init
+2018-04-30 19:21:49 - Root WebApplicationContext: initialization completed in 6502 ms
+2018-04-30 19:22:52 - Root WebApplicationContext: initialization started
+2018-04-30 19:22:52 - Refreshing Root WebApplicationContext: startup date [Mon Apr 30 19:22:52 CEST 2018]; root of context hierarchy
+2018-04-30 19:22:52 - Loading XML bean definitions from ServletContext resource [/WEB-INF/beans.xml]
+2018-04-30 19:22:53 - Loading XML bean definitions from class path resource [META-INF/cxf/cxf.xml]
+2018-04-30 19:22:54 - JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2018-04-30 19:22:54 - Init
+2018-04-30 19:22:54 - Creating embedded database 'testdb'
+2018-04-30 19:22:55 - Building JPA container EntityManagerFactory for persistence unit 'Modelo'
+2018-04-30 19:22:58 - Init
+2018-04-30 19:22:58 - Init
+2018-04-30 19:22:58 - Root WebApplicationContext: initialization completed in 6560 ms
+2018-04-30 19:23:15 - Init
+2018-04-30 19:23:48 - Init
+2018-04-30 19:23:48 - 
+2018-04-30 19:23:48 - Sydney y el id era 5
+2018-04-30 19:23:52 - Init
+2018-04-30 19:23:52 - 
+2018-04-30 19:23:52 - Sydney y el id era 5

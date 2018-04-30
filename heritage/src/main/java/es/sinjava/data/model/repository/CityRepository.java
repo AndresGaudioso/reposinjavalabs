@@ -14,19 +14,25 @@
  * limitations under the License.
  */
 
-package es.sinjava.data.repository.model;
+package es.sinjava.data.model.repository;
 
 import java.util.List;
 
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.data.repository.query.Param;
 
-import es.sinjava.data.jpa.model.domain.Hotel;
+import es.sinjava.data.jpa.model.domain.City;
 
-interface HotelRepository extends JpaRepository<Hotel, Long> {
+// docs
+// http://docs.spring.io/spring-data/data-commons/docs/1.6.1.RELEASE/reference/html/repositories.html
 
-	Hotel findByName(String name);
+public interface CityRepository extends JpaRepository<City, Long> {
 
-	List<Hotel> findByCityName(@Param("city") String cityName);
+	City findByName(String name);
+
+	List<City> findByCountry(String country);
+
+	Page<City> findByCountryAllIgnoringCase(String country, Pageable pagable);
 
 }

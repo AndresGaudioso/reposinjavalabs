@@ -7,7 +7,7 @@ import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
 
 import es.sinjava.data.jpa.model.domain.City;
-import es.sinjava.data.repository.model.CityRepository;
+import es.sinjava.data.model.repository.CityRepository;
 
 @Component
 @Transactional

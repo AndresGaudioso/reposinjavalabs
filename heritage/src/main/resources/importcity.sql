@@ -4,8 +4,10 @@
 
 -- =================================================================================================
 -- AUSTRALIA
-insert into city(country, name, state, map) values ('Spain', 'Zaragoza', 'Queensland', '-27.470933, 153.023502')
-insert into hotel(city_id, name, address, zip) values (0, 'Zaragoza-Royal', 'William & George Streets', '4001')
+insert into city(country, name, state, map) values ('Spain', 'Sevilla', 'Andalucia', '-27.470933, 153.023502')
+
+insert into city(country, name, state, map) values ('Spain', 'Zaragoza', 'Aragón', '-27.470933, 153.023502')
+insert into hotel(city_id, name, address, zip) values (1, 'Zaragoza-Royal', 'William & George Streets', '4001')
 
 -- Brisbane
 insert into city(country, name, state, map) values ('Australia', 'Brisbane', 'Queensland', '-27.470933, 153.023502')
