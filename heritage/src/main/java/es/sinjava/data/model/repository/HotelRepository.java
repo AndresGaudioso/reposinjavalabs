@@ -19,7 +19,6 @@ package es.sinjava.data.model.repository;
 import java.util.List;
 
 import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.data.repository.query.Param;
 
 import es.sinjava.data.jpa.model.domain.Hotel;
 
@@ -27,6 +26,6 @@ interface HotelRepository extends JpaRepository<Hotel, Long> {
 
 	Hotel findByName(String name);
 
-	List<Hotel> findByCityName(@Param("city") String cityName);
+	List<Hotel> findByCityName(String cityName);
 
 }
